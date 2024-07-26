@@ -2,7 +2,7 @@ package com.app.login.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.login.base.ui.ViewEffect
+import com.app.login.base.ui.fragment.ViewEffect
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package com.app.login.base.ui
+package com.app.login.base.ui.fragment
 
 import android.os.Bundle
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package com.app.login.base.ui
+package com.app.login.base.ui.fragment
 
 import com.app.login.base.bottom_sheet.BottomSheetBuilder
 
