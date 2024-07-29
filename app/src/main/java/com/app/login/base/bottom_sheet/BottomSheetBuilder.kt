@@ -1,11 +1,10 @@
 package com.app.login.base.bottom_sheet
 
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 typealias OnClickListener = () -> Unit
 
 data class BottomSheetBuilder(
-    var icon: Int?,
+    var icon: Int? = null,
     var title: String?,
     var desc: String?,
     var closable: Boolean = true,
