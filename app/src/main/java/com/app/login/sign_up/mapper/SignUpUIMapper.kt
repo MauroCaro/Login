@@ -4,7 +4,6 @@ import com.app.login.R
 import com.app.login.base.bottom_sheet.BottomSheetBuilder
 import com.app.login.base.ui.fragment.ShowDialog
 import com.app.login.base.ui.resource.ResourceManager
-import kotlinx.coroutines.Job
 import javax.inject.Inject
 
 class SignUpUIMapper @Inject constructor(

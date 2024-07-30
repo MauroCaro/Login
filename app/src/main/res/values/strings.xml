@@ -23,6 +23,12 @@
 
     <string name="register_success_title">Operation complete</string>
     <string name="register_success_message">User registered successfully</string>
-
+    <string name="register_title">Sign Up</string>
+    <string name="register_label_first_name">First name</string>
+    <string name="register_label_last_name">Last name</string>
+    <string name="register_label_last_userName">Username</string>
+    <string name="register_label_last_passowrd">password</string>
+    <string name="register_label_last_is_active">Is active</string>
+    <string name="register_button_sign_up">Sign Up</string>
 
 </resources>

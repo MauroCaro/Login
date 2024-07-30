@@ -20,5 +20,5 @@ interface MainModule {
 
     @Binds
     @Singleton
-    abstract fun bindResourceManager(resourceManagerImpl: ResourceManagerImpl): ResourceManager
+    fun bindResourceManager(resourceManagerImpl: ResourceManagerImpl): ResourceManager
 }

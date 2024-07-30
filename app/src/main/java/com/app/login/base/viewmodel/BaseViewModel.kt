@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.login.base.bottom_sheet.BottomSheetBuilder
 import com.app.login.base.bottom_sheet.DialogButtonsType
-import com.app.login.base.navigation.Navigator
 import com.app.login.base.ui.fragment.ShowDialog
 import com.app.login.base.ui.fragment.ViewEffect
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -34,7 +33,7 @@ open class BaseViewModel<State> @Inject constructor(
 
     val event: SharedFlow<ViewEffect> = _event.asSharedFlow()
 
-    val _state = MutableStateFlow<State>(initialState)
+    val _state = MutableStateFlow(initialState)
 
     val state = _state.stateIn(
         viewModelScope,

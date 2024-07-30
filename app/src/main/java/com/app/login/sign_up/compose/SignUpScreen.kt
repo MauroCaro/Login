@@ -23,11 +23,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.app.domain.login.model.UserInformation
+import com.app.login.R
 import com.app.login.sign_up.viewmodel.SignUpViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -38,17 +40,17 @@ fun SignUpScreen(
 ) {
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
+    var userName by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isUserActive by remember { mutableStateOf(false) }
 
     val isSignUpEnabled =
-        firstName.isNotBlank() && lastName.isNotBlank() && email.isNotBlank() && password.isNotBlank()
+        firstName.isNotBlank() && lastName.isNotBlank() && userName.isNotBlank() && password.isNotBlank()
 
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text("Registro") }
+                title = { Text(stringResource(id = R.string.register_title)) }
             )
         }
     ) { innerPadding ->
@@ -61,28 +63,28 @@ fun SignUpScreen(
             OutlinedTextField(
                 value = firstName,
                 onValueChange = { firstName = it },
-                label = { Text("Nombre") },
+                label = { Text(stringResource(id = R.string.register_label_first_name)) },
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 value = lastName,
                 onValueChange = { lastName = it },
-                label = { Text("Apellido") },
+                label = { Text(stringResource(id = R.string.register_label_last_name)) },
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
-                value = email,
-                onValueChange = { email = it },
-                label = { Text("Correo electrónico") },
+                value = userName,
+                onValueChange = { userName = it },
+                label = { Text(stringResource(id = R.string.register_label_last_userName)) },
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text("Contraseña") },
+                label = { Text(stringResource(id = R.string.register_label_last_passowrd)) },
                 visualTransformation = PasswordVisualTransformation(),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -98,7 +100,7 @@ fun SignUpScreen(
                     onCheckedChange = { isUserActive = it }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Activo")
+                Text(stringResource(id = R.string.register_label_last_is_active))
             }
 
             Spacer(modifier = Modifier.weight(1f))
@@ -110,7 +112,7 @@ fun SignUpScreen(
                             null,
                             firstName,
                             lastName,
-                            email,
+                            userName,
                             password,
                             isUserActive
                         )
@@ -119,7 +121,7 @@ fun SignUpScreen(
                 enabled = isSignUpEnabled,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Sign Up")
+                Text(stringResource(id = R.string.register_button_sign_up))
             }
         }
     }

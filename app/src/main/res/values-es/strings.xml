@@ -1,9 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="test">Inicio</string>
+    <string name="app_name">Iniciar sesión</string>
+    <string name="test">Iniciar sesión</string>
 
+    <string name="general_warning_title">Por favor revisa</string>
+    <string name="general_contact_support">Contacta a soporte</string>
+    <string name="general_error">Algo salió mal</string>
+    <string name="dismiss">Descartar</string>
 
     <string name="login_welcome">Bienvenido</string>
+    <string name="login_descripion">Por favor inicia sesión con tu cuenta para continuar</string>
+    <string name="login_label_user">Ingresa tu nombre de usuario</string>
+    <string name="login_place_holder_user">Usuario</string>
+    <string name="login_label_password">Ingresa tu contraseña</string>
+    <string name="login_place_holder_password">Contraseña</string>
+    <string name="login_register">¿Quieres crear una nueva cuenta?</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="login_term_condition">Al iniciar sesión, aceptas nuestros Términos y Condiciones y Política de Privacidad</string>
+    <string name="login_error_user_does_not_exist">El usuario no existe, por favor verifica la información</string>
+    <string name="login_error_user_is_not_active">El usuario no está activo, por favor contacta a soporte para obtener ayuda</string>
+    <string name="login_success_title">ÉXITO</string>
+    <string name="login_success_message">Información de inicio de sesión del usuario confirmada</string>
 
+    <string name="register_success_title">Operación completada</string>
+    <string name="register_success_message">Usuario registrado exitosamente</string>
+    <string name="register_title">Registrarse</string>
+    <string name="register_label_first_name">Nombre</string>
+    <string name="register_label_last_name">Apellido</string>
+    <string name="register_label_last_userName">Nombre de usuario</string>
+    <string name="register_label_last_passowrd">Contraseña</string>
+    <string name="register_label_last_is_active">Está activo</string>
+    <string name="register_button_sign_up">Registrarse</string>
 
 </resources>
