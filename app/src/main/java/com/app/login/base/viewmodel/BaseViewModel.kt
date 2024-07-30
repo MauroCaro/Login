@@ -55,8 +55,8 @@ open class BaseViewModel<State> @Inject constructor(
                         _event.tryEmit(
                             ShowDialog(
                                 BottomSheetBuilder(
-                                    title = "",
-                                    desc = ""
+                                    title = "Something went wrong",
+                                    desc = exception.message
                                 ).setButtonType(DialogButtonsType.INFORMATION)
                             )
                         )

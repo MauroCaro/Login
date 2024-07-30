@@ -5,6 +5,8 @@ import com.app.domain.login.model.LoginState
 import com.app.domain.login.model.UserInformation
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 @ViewModelScoped
@@ -12,18 +14,13 @@ class DoLoginUC @Inject constructor(
     private val loginRepository: LoginRepository
 ) {
 
-    fun invoke(userName: String, password: String): Flow<LoginState> {
-        val userInfo: UserInformation? = UserInformation("", "", "", 0, "", false)
-
-        if (userInfo == null || userInfo.id.isEmpty()) {
-            LoginState.UserDoesNotExist
+    suspend fun invoke(userName: String, password: String): Flow<LoginState> {
+        return loginRepository.checkLoginCredentials(userName, password).map { userInfo ->
+            when {
+                userInfo == null || userInfo.id.isNullOrEmpty() -> LoginState.UserDoesNotExist
+                !userInfo.isUserActive -> LoginState.UserIsNotActive
+                else -> LoginState.LoginInformation(userInfo)
+            }
         }
-
-        if (userInfo!!.isUserActive.not()) {
-            LoginState.UserIsNotActive
-        }
-
-        LoginState.UserIsNotActive
-        return TODO("Provide the return value")
     }
 }

@@ -12,11 +12,11 @@ sealed class Destination(protected val route: String, vararg params: String) {
         operator fun invoke(): String = route
     }
 
-    object LoginScreen : NoArgumentsDestination(HOME_ROUTE)
+    object LoginScreen : NoArgumentsDestination(LOGIN_ROUTE)
 
     object SignUpScreen : NoArgumentsDestination(SIGN_UP_ROUTE)
 
-    object HomeScreen : Destination(LOGIN_ROUTE, ID) {
+    object HomeScreen : Destination(HOME_ROUTE, ID) {
         operator fun invoke(idUser: String): String = route.appendParams(
             ID to idUser
         )

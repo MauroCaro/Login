@@ -49,7 +49,7 @@ class UserLocalSourceImpl @Inject constructor(
         return dao.loadById(id)
     }
 
-    override fun checkLoginCredentials(userName: String, password: String): UserEntity? {
+    override fun checkLoginCredentials(userName: String, password: String): Flow<UserEntity?> {
         return dao.checkLoginCredentials(userName, password)
     }
 }

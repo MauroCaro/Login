@@ -28,7 +28,7 @@ interface UserDao : BaseDao<UserEntity> {
     @Query("SELECT * FROM UserEntity WHERE id = :id")
     fun loadById(id: String): UserEntity?
 
-    @Query("SELECT * FROM UserEntity WHERE userName = :userName AND password = :password")
-    fun checkLoginCredentials(userName: String, password: String): UserEntity?
+    @Query("SELECT * FROM UserEntity WHERE email = :userName AND password = :password")
+    fun checkLoginCredentials(userName: String, password: String): Flow<UserEntity?>
 
 }

@@ -10,10 +10,7 @@ data class UserEntity(
     override val id: String,
     val firstName: String,
     val lastName: String,
-    val userName: String,
     val email: String,
     val password: String,
-    val age: Int,
-    val address: String,
     val isUserActive: Boolean
 ) : IdentifyEntity

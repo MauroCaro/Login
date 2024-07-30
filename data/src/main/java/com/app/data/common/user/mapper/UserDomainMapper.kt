@@ -7,8 +7,25 @@ import javax.inject.Inject
 
 class UserDomainMapper @Inject constructor() : Mapper<UserInformation, UserEntity> {
 
-    override fun mapRemote(remotePojo: UserEntity): UserInformation {
-        TODO("Not yet implemented")
+    override fun mapRemote(entity: UserEntity): UserInformation {
+       return UserInformation(
+           entity.id,
+           entity.firstName,
+           entity.lastName,
+           entity.email,
+           entity.password,
+           entity.isUserActive,
+       )
     }
 
+    override fun mapLocal(userInfo: UserInformation): UserEntity {
+        return UserEntity(
+            userInfo.id!!,
+            userInfo.firstName,
+            userInfo.lastName,
+            userInfo.email,
+            userInfo.password,
+            userInfo.isUserActive
+        )
+    }
 }

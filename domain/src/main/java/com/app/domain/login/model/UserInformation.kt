@@ -1,10 +1,10 @@
 package com.app.domain.login.model
 
 data class UserInformation(
-    val id: String,
-    val name: String,
+    val id: String? = null,
+    val firstName: String,
     val lastName: String,
-    val age: Int,
-    val address: String,
+    val email: String,
+    val password: String,
     val isUserActive: Boolean
 )

@@ -12,7 +12,7 @@ abstract class UpdateStorageOperation<T : IdentifyEntity>(private val db: RoomDa
 
     fun execute(itemsToInsert: List<T>): List<T> {
         val newItemsId = ArrayList<String>()
-        var oldItemsId: List<String>? = getAllIds()
+        val oldItemsId: List<String>? = getAllIds()
         itemsToInsert.forEach { toInsert ->
             newItemsId.add(toInsert.id)
             createOrUpdate(toInsert)

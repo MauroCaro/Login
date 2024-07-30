@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -60,7 +61,7 @@ fun LoginScreen(
             onValueChange = { username = it },
             label = { Text(stringResource(id = R.string.login_label_user)) },
             placeholder = { Text(stringResource(id = R.string.login_place_holder_user)) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth().testTag("userName")
         )
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
@@ -69,15 +70,17 @@ fun LoginScreen(
             label = { Text(stringResource(id = R.string.login_label_password)) },
             placeholder = { Text(stringResource(id = R.string.login_place_holder_password)) },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth().testTag("password")
         )
 
         Spacer(modifier = Modifier.height(8.dp)) // Smaller spacing
 
         TextButton(
-            onClick = { /* Handle "Olvidaste tu contraseña?" */ }
+            onClick = {
+                loginViewModel.navigateToSignUp()
+            }
         ) {
-            Text(stringResource(id = R.string.login_place_forget_password))
+            Text(stringResource(id = R.string.login_register))
         }
 
         Spacer(modifier = Modifier.height(24.dp)) // Add spacing between fields and button
@@ -88,7 +91,7 @@ fun LoginScreen(
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .height(56.dp),
+                .height(56.dp).testTag("loginButton"),
             enabled = username.isNotBlank() && password.isNotBlank()
         ) {
             Text(stringResource(id = R.string.login_button))

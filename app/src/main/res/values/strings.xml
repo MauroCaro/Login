@@ -1,14 +1,28 @@
 <resources>
     <string name="app_name">Login</string>
     <string name="test">Login</string>
+
+    <string name="general_warning_title">Please check</string>
+    <string name="general_contact_support">Contact support</string>
+    <string name="general_error">Something went wrong</string>
+    <string name="dismiss">Dismiss</string>
+
     <string name="login_welcome">Welcome</string>
     <string name="login_descripion">Please log in with your account to continue</string>
     <string name="login_label_user">Enter your username</string>
     <string name="login_place_holder_user">User</string>
     <string name="login_label_password">Enter your password</string>
     <string name="login_place_holder_password">Password</string>
-    <string name="login_place_forget_password">¿Did you forget your password?</string>
+    <string name="login_register">¿Want to create a new account?</string>
     <string name="login_button">Log in</string>
     <string name="login_term_condition">By logging in, you agree to our Terms and Conditions and Privacy Policy</string>
+    <string name="login_error_user_does_not_exist">User does not exist, please verify information</string>
+    <string name="login_error_user_is_not_active">User is not active, please contact support for help</string>
+    <string name="login_success_title">SUCCESS</string>
+    <string name="login_success_message">User login information confirmed</string>
+
+    <string name="register_success_title">Operation complete</string>
+    <string name="register_success_message">User registered successfully</string>
+
 
 </resources>

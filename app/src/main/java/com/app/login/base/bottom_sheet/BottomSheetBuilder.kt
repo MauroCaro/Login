@@ -77,7 +77,6 @@ data class BottomSheetBuilder(
             type,
             hideDismissButton,
             dismissListener,
-            shouldNotifyNegativeListenerWhenClosing,
-            lottieAnimationRes = lottieAnimationRes,
+            shouldNotifyNegativeListenerWhenClosing
         )
 }

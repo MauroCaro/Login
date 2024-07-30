@@ -3,12 +3,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id ("kotlin-kapt")
+    id ("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "com.app.login"
     compileSdk = 34
+
+    defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 
     defaultConfig {
         applicationId = "com.app.login"
@@ -47,6 +52,7 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":ui-commons"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -61,6 +67,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit.v112)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
 
 kapt {
